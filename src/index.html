@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>Soda Straws DEMO</title>
+
+    <link href="css/main.css" rel="stylesheet">
+
+    <script type="text/javascript" src="lib/pixi.min.js"></script>
+    <!--script type="text/javascript" src="lib/pixi-particles.min.js"></script-->
+    <script type="text/javascript" src="lib/TweenMax.min.js"></script>
+    <script type="text/javascript" src="lib/modernizr-custom.js"></script>
+
+    <!-- Can't load fonts directly, we need to preload them -->
+    <script src="http://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
+
+    <script type="text/javascript" src="js/main.min.js"></script>
+</head>
+
+<body onload="new Game();" class="noFrame">
+	<div id="wrapper">
+		<div id="paddingContainer">
+			<div id="gameAndLoaderContainer">
+				<div id="game"></div>
+				<div id="loader">
+					<div class="loaderLogoContainer"></div>
+					<div class="loaderTextContainer">
+						<div class="loadingLabel">Loading...</div>
+						<div id="loadingPercentage">0%</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="landscapeNotSupportedContainer"></div>
+</body>
+
+</html>

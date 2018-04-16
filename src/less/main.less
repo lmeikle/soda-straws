@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css?family=Lobster');
+
+/** default css is for mobile/tablet devices - canvas fills the screen */
+html,
+body {
+	height: 100%;
+	overflow: hidden;
+	margin: 0;
+	background: #000000;
+}
+
+#wrapper {
+	display: none; /* hidden till sized correctly */
+	width: 100%;
+	height: 100%;
+	margin: auto;
+
+	#paddingContainer {
+		width: 100%;
+		height: 100%;
+
+		#gameAndLoaderContainer {
+			position: relative;
+			width: 100%;
+			height: 100%;
+
+			#game {
+				width: 100%;
+				height: 100%;
+			}
+
+			#loader {
+				position: absolute;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				background-repeat: no-repeat;
+				background-image: radial-gradient(circle farthest-corner, rgba(32, 32, 32, 1) 30%, #000000 100%);
+				color: #ffffff;
+				font-size: 20px;
+				text-align: center;
+				font-family: 'Lobster';
+
+				.loaderLogoContainer {
+					position: absolute;
+					top: 0;
+					width: 100%;
+					height: 100%;
+					background-position: center center;
+					background-size: 297px 124px;
+					background-repeat: no-repeat;
+					background-image: url('../assets/charangoLogo-x2.png');
+
+					@media only screen and (max-width: 400px) {
+						background-size: 264px 110px;
+					}
+				}
+
+				.loaderTextContainer {
+					position: absolute;
+					top: 65%;
+					margin: auto;
+					width: 100%;
+					height: 100%;
+
+					.loadingLabel {
+						display: inline-block;
+					}
+
+					#loadingPercentage {
+						display: inline-block;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (orientation: landscape) {
+	body.TOUCH_DEVICE #landscapeNotSupportedContainer {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		background-color: #212121;
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-image: url('../assets/landscapeNotSupported.png');
+	}
+}
+
+/** DESKTOP - wraps game in iPhone frame image */
+body.DESKTOP_DEVICE {
+	background-size: 50px;
+	background-image: url('../assets/demoWatermark.jpg');
+
+	#wrapper {
+		background-size: 100% 100%;
+		background-image: url('../assets/phoneFrame.png');
+
+		#paddingContainer {
+			padding: 30% 7% 29% 7.5%;
+			box-sizing: border-box;
+
+			#gameAndLoaderContainer {
+				.loaderLogoContainer {
+					background-size: 75% auto !important;
+				}
+
+				.loaderTextContainer {
+					top: 60%;
+				}
+			}
+		}
+	}
+}
+
+
+
+  
+
+
+
